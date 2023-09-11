@@ -68,7 +68,7 @@ class Base {
 
 const dynamicParam = ({ ...args }) => {
   const obj = args;
-  if (args !== {}) {
+  if (Object.keys(args).length !== 0) {
     let query = '';
     Object.keys(obj).forEach((key, index) => {
       const ampasign = index !== 0 ? '&' : '';
