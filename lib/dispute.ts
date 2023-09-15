@@ -33,7 +33,7 @@ class Dispute extends Base {
 
 
   async showDispute(reference:string){
-    const url = '/cards/' + reference;
+    const url = '/disputes/' + reference;
     const method = 'get';
     try {
         const response = await this.sendRequest(url, method)
