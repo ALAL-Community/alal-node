@@ -38,7 +38,7 @@ class Dispute {
 
 class Transaction {
 
-    constructor(public amount:string, public card_reference:string, public reference:string, public status:string, public created_at:string, public kind:string, public merchant:string) {
+    constructor(public amount:string, public card_reference:string, public reference:string, public status:string, public created_at:string, public kind:string, public merchant:string, public bank_name:string, public account_name:string, public bank_id:string, public description:string, public phone:string, public wallet_network:string) {
         this.amount = amount
         this.card_reference = card_reference
         this.reference = reference
@@ -46,6 +46,12 @@ class Transaction {
         this.created_at = created_at
         this.kind = kind
         this.merchant = merchant
+        this.bank_name = bank_name
+        this.account_name = account_name
+        this.bank_id = bank_id
+        this.description = description
+        this.phone = phone
+        this.wallet_network = wallet_network
     }
 }
 
