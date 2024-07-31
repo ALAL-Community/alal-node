@@ -12,7 +12,7 @@ class Card  {
 }
 
 class CardUser {
-    constructor(public address:string, public first_name:string, public last_name:string, public id_no:string, public phone:string, public reference:string, public status:string, public created_at:string) {
+    constructor(public address:string, public first_name:string, public last_name:string, public id_no:string, public phone:string, public reference:string, public status:string, public created_at:string, public card_user_reference:string) {
         this.address = address
         this.first_name = first_name
         this.last_name = last_name
@@ -21,6 +21,7 @@ class CardUser {
         this.reference = reference
         this.status = status
         this.created_at = created_at
+        this.card_user_reference = card_user_reference
     }
 }
 
@@ -53,6 +54,15 @@ class Transaction {
         this.phone = phone
         this.wallet_network = wallet_network
     }
+
 }
 
-export {CardUser, Card, Dispute, Transaction}
+class Miscellaneous {
+    constructor(public phone:string, public country_code:string) {
+
+        this.phone = phone 
+        this.country_code = country_code
+    }
+}
+
+export {CardUser, Card, Dispute, Transaction, Miscellaneous}

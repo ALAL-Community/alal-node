@@ -13,6 +13,7 @@ class CardUser extends Base {
         data.reference,
         data.status,
         data.created_at,
+        data.card_user_reference
     );
     return cardUser
   }
@@ -52,6 +53,21 @@ class CardUser extends Base {
     this.checkParameter(requiredData, data)
 
     const url = '/card-users/create';
+    const method = 'post';
+    try {
+        const response = await this.sendRequest(url, method, data)
+        const cardUser = this.generateCardUserObject(response)
+        return cardUser
+    } catch (error:any) {
+        throw error
+    }
+  }
+
+  async resubmitCardUser(data:any){
+    const requiredData = ["card_user_reference", "email", "first_name", "last_name", "id_no", "address", "back_id_image", "id_image", "selfie_image", "phone"]
+    this.checkParameter(requiredData, data)
+
+    const url = '/card-users/resubmit';
     const method = 'post';
     try {
         const response = await this.sendRequest(url, method, data)
